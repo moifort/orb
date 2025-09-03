@@ -1,13 +1,12 @@
-# Nuxt Minimal Starter
+# Orb
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## 📋 Requirements
 
-## Start
+- bun
 
-Make sure to install dependencies:
+## 🏗️ Setup
 
 ```bash
-# bun
-bun install
-bun dev
+$ bun installation
+$ bun dev # serve with hot reload at localhost:3000  
 ```

@@ -14,9 +14,6 @@
 	},
 	"linter": {
 		"enabled": true,
-		"domains": {
-			"vue": "recommended"
-		},
 		"rules": {
 			"recommended": true
 		}
@@ -31,7 +28,7 @@
 		"enabled": true,
 		"actions": {
 			"source": {
-				"organizeImports": "on"
+				"organizeImports": "off"
 			}
 		}
 	}
