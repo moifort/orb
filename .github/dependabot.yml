@@ -1,0 +1,15 @@
+version: 2
+updates:
+  - package-ecosystem: "bun"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 5
+    groups:
+      minor-dependencies:
+        applies-to: version-updates
+        update-types:
+          - "minor"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
