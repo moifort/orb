@@ -6,8 +6,14 @@ export const boiler = router({
 		.meta({
 			mcp: {
 				enabled: true,
-				description: 'Get boiler current temperature in ° Celsius',
-				name: 'Get boiler current temperature',
+				name: 'get_boiler_current_temperature',
+				description: `
+Retrieve the current temperature of the espresso machine boiler.
+- Unit: degrees Celsius (°C)
+- Source: internal boiler temperature sensor
+- Usage: call this tool to monitor or display the boiler state
+- Refresh interval: updated every 4 minutes
+- Output:integer between 0 and 500`,
 			},
 		})
 		.query((data) => getCurrentTemperature(data.ctx.storage)()),

@@ -1,13 +1,10 @@
-# Dependabot configuration
-# Groups all minor npm dependency updates into a single PR.
-# Major updates will be opened as separate PRs by default.
 version: 2
 updates:
-  - package-ecosystem: "npm"
+  - package-ecosystem: "bun"
     directory: "/"
     schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 20
+      interval: "daily"
+    open-pull-requests-limit: 5
     groups:
       minor-dependencies:
         applies-to: version-updates
