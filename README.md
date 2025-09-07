@@ -1,5 +1,5 @@
 # ☕️ Orb — _Another Gaggia Mod_
-![image](./.docs/orb.png)
+![image](orb.jpg)
 > Design-first, fully connected, all-TypeScript Gaggia mod. Bigger round screen, web dev-friendly stack ❤️.
 ---
 
