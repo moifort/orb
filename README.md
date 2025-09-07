@@ -11,7 +11,7 @@ developer, you’ll feel right at home. I’m especially focused on a design wit
 - [🖌️ Figma design discovery](https://www.figma.com/design/AHiLtSJ49nn0VO5oZbc940/Nuxt-UI-v3-•-Official-Design-Kit-•-Free--Community-?node-id=3523-8815&p=f&t=C1Ur5FfJ0Jg08B5x-0)
 
 ## Roadmap
-> 💡 If you want to change a priority or add a feature, please open an issue or propose a PR.
+> 💡 If you want to vote or suggest new idea go to [Github Discussions](https://github.com/moifort/orb/discussions/categories/ideas)
 > 
 - ⏳ **Phase 1:** Proof of Concept — ability to control at least one sensor, one relay, and a touchscreen
     - [x] Initialize NuxtJs project
