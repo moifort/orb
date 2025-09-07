@@ -1,4 +1,4 @@
-# ☕️ Orb — _Another Gaggia Mod_
+# Orb - _Made In France Gaggia mod 🇫🇷_
 ![image](orb.jpg)
 > Design-first, fully connected, all-TypeScript Gaggia mod. Bigger round screen, web dev-friendly stack ❤️.
 ---
