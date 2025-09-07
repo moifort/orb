@@ -10,6 +10,7 @@ updates:
         applies-to: version-updates
         update-types:
           - "minor"
+          - "patch"
     commit-message:
       prefix: "chore"
       include: "scope"

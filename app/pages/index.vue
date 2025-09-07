@@ -6,5 +6,5 @@ const { data, pending, refresh } =
 
 <template>
     <div class="text-2xl font-bold">{{ pending ? "Loading...": data }}°C</div>
-    <UButton @click="refresh">Refresh</UButton>
+    <UButton @click="refresh()">Refresh</UButton>
 </template>
