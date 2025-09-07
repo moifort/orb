@@ -14,7 +14,7 @@ And with a bigger screen because why not ?
 ## Roadmap
 > 💡 If you want to change a priority or add a feature, please open an issue or propose a PR.
 
-- **Phase 1:** Proof Of Concept, capatibility to control at least one sensor, one relay and touch screen with Typescript
+- ⏳**Phase 1:** Proof Of Concept, capatibility to control at least one sensor, one relay and touch screen with Typescript
     - [x] Init Nuxt project
     - [x] Buy components:
         - [x] [Kit Raspberry Pi Zero 2W](https://fr.aliexpress.com/item/1005008267755917.html?spm=a2g0o.order_list.order_list_main.10.58785e5bD7hSzg&gatewayAdapt=glo2fra) - **23€**
