@@ -5,9 +5,7 @@ export default defineNuxtConfig({
 	modules: ['@nuxt/image', '@nuxt/ui'],
 	devtools: { enabled: false },
 	css: ['~/assets/css/main.css'],
-	build: {
-		transpile: ['trpc-nuxt'],
-	},
+	build: { transpile: ['trpc-nuxt'] },
 	nitro: {
 		storage: {
 			database: {
