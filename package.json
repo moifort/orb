@@ -8,6 +8,7 @@
 		"postinstall": "nuxt prepare"
 	},
 	"dependencies": {
+		"@matter/main": "0.15.3",
 		"@nuxt/image": "1.11.0",
 		"@nuxt/ui": "3.3.3",
 		"@trpc/client": "11.5.1",

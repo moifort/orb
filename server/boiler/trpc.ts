@@ -1,5 +1,5 @@
-import {getCurrentTemperature} from "~~/server/boiler/query";
-import {procedure, router} from "~~/server/api";
+import { procedure, router } from '~~/server/api'
+import { getCurrentTemperature } from '~~/server/boiler/query'
 
 export const boiler = router({
 	getCurrentTemperature: procedure

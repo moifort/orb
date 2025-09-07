@@ -1,5 +1,5 @@
-import {initTRPC, lazy} from '@trpc/server'
-import type {McpMeta} from 'trpc-to-mcp/types'
+import { initTRPC, lazy } from '@trpc/server'
+import type { McpMeta } from 'trpc-to-mcp/types'
 
 export const context = () => ({ storage: useStorage('database') })
 export type Context = Awaited<ReturnType<typeof context>>
