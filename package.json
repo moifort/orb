@@ -23,7 +23,7 @@
 		"vue-router": "4.5.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.2.2",
+		"@biomejs/biome": "2.2.3",
 		"vue-tsc": "3.0.6"
 	}
 }
