@@ -1,5 +1,5 @@
-import {make} from 'ts-brand'
-import type {TemperatureC as TemperatureCType} from '#shared/boiler/type'
+import { make } from 'ts-brand'
+import type { TemperatureC as TemperatureCType } from '#shared/boiler/type'
 
 export const TemperatureC = make<TemperatureCType>((value) => {
 	if (value < 0)
