@@ -12,3 +12,7 @@ export const appRouter = router({
 	boiler: lazy(() => import('../boiler/trpc')),
 })
 export type AppRouter = typeof appRouter
+
+export const appMcpRouter = router({
+	boiler: lazy(() => import('../boiler/mcp')),
+})
