@@ -5,7 +5,9 @@
 	"scripts": {
 		"build": "nuxt build",
 		"dev": "nuxt dev",
-		"postinstall": "nuxt prepare"
+		"postinstall": "nuxt prepare",
+		"lint": "biome check --write .",
+		"typecheck": "vue-tsc --noEmit"
 	},
 	"dependencies": {
 		"@matter/main": "0.15.3",
