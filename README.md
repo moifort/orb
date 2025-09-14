@@ -3,14 +3,14 @@
 > Design-first, fully connected, all-TypeScript Gaggia mod. Bigger round screen, web dev-friendly stack ❤️.
 ---
 
-## Why ?
+## ❓Why ?
 I love coffee, coding, and electronics. I’m building this project from scratch because it’s fun. If you’re a web 
 developer, you’ll feel right at home. I’m especially focused on a design with a large round touch display.
 
-## Source
+## 📦 Source
 - [🖌️ Figma design discovery](https://www.figma.com/design/AHiLtSJ49nn0VO5oZbc940/Nuxt-UI-v3-•-Official-Design-Kit-•-Free--Community-?node-id=3523-8815&p=f&t=C1Ur5FfJ0Jg08B5x-0)
 
-## Roadmap
+## 🗺️ Roadmap
 > 💡 If you want to vote or suggest new idea go to [Github Discussions](https://github.com/moifort/orb/discussions/categories/ideas)
 > 
 - ⏳ **Phase 1:** Proof of Concept — ability to control at least one sensor, one relay, and a touchscreen
@@ -34,22 +34,9 @@ developer, you’ll feel right at home. I’m especially focused on a design wit
 - **Phase 6:** Implement one profile + design the UI
 - **Phase 7:** 3D-print the enclosure + design the UI
 - **Phase 8:** Offer a selection of profiles
+- **To infinity, and beyond!** see all ideas, vote, and suggest new ones on [Github Discussions](https://github.com/moifort/orb/discussions/categories/ideas)
 
-- **To infinity, and beyond!**
-    - Wi-Fi configuration
-    - Over-the-air (OTA) updates
-    - Interface web
-    - Interface mobile
-    - Cloud 
-    - Steam temperature control
-    - Connected espresso scale + brew by weight
-    - Connected grinder scale + smart plug
-    - Create and customize your own profiles
-    - Shot history
-    - Preheat customization
-    - Create a profile marketplace (by coffee brand, by user, by barista, etc.)
-
-## Setup
+## ⚙️ Setup
 ### Server MCP
 Add this configuration to your LLM tool (Claude, Cursor, LLM Studio, etc.):
 ```json
