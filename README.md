@@ -3,6 +3,7 @@
 > Design-first, fully connected, all-TypeScript Gaggia mod. Bigger round screen, web dev-friendly stack ❤️.
 ---
 
+
 ## ❓Why ?
 I love coffee, coding, and electronics. I’m building this project from scratch because it’s fun. If you’re a web 
 developer, you’ll feel right at home. I’m especially focused on a design with a large round touch display.
