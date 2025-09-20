@@ -11,10 +11,6 @@ updates:
         update-types:
           - "minor"
           - "patch"
-      major-dependencies:
-        applies-to: version-updates
-        update-types:
-          - "major"
     commit-message:
       prefix: "chore"
       include: "scope"
