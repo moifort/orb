@@ -29,9 +29,9 @@ jobs:
         shell: bash
         run: |
           set -eo pipefail
-          VERSION=$(git show -s --format=%cd --date=format:'%y.%m.%d.%H.%M' HEAD)
+          VERSION=$(git show -s --format=%cd --date=format:'%Y.%m.%d-%Hh%M' HEAD)
           if [ -z "$VERSION" ]; then
-            VERSION=$(date -u '+%y.%m.%d.%H.%M')
+            VERSION=$(date -u '+%Y.%m.%d-%Hh%M')
           fi
           echo "Calculated version: $VERSION"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
