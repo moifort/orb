@@ -2,15 +2,27 @@
 definePageMeta({ colorMode: 'dark' })
 
 const { $trpc } = useNuxtApp()
-const { data, pending, refresh } =
-  await $trpc.boiler.getCurrentTemperature.useQuery()
-const counter = ref(40)
+const {
+  data: temp,
+  pending,
+  refresh,
+} = await $trpc.boiler.getCurrentTemperature.useQuery()
+const counter = ref(0)
+const isRebooting = ref(false)
+const reboot = async () => {
+  if (isRebooting.value) return
+  isRebooting.value = true
+  await $trpc.system.reboot.mutate()
+}
 </script>
 
 <template>
   <div class="flex flex-col items-center justify-center min-h-screen ">
 <!--    <div class="text-9xl font-bold">{{ pending ? "Loading..." : data }}°C</div>-->
-    <div class="text-9xl font-bold">{{ counter }}</div>
+    <div class="grid grid-cols-2 gap-4">
+        <div class="text-9xl font-bold">{{ counter }}</div>
+        <div class="text-9xl font-bold">{{ pending ? "." : temp }}</div>
+    </div>
 
     <div class="grid grid-cols-1 gap-4">
       <UFormField  size="xl" label="Email">
@@ -27,8 +39,13 @@ const counter = ref(40)
       <UButton size="xl" type="submit">
         Submit
       </UButton>
-      <UButton  size="xl" variant="outline" >
-        Clear
+      <UButton  size="xl" variant="outline"  @click="() => refresh()">
+        Refresh
+      </UButton>
+    </div>
+    <div class="flex gap-2 mt-8">
+      <UButton size="xl" type="submit" color="error" @click="reboot" :loading="isRebooting" >
+        Reboot
       </UButton>
     </div>
 <!--    <Slider v-model="counter" />-->

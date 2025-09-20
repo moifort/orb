@@ -10,6 +10,7 @@ export const router = t.router
 export const procedure = t.procedure
 export const appRouter = router({
 	boiler: lazy(() => import('../boiler/trpc')),
+	system: lazy(() => import('../system/trpc')),
 })
 export type AppRouter = typeof appRouter
 
