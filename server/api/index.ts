@@ -9,11 +9,11 @@ const t = initTRPC.meta<McpMeta>().context<Context>().create()
 export const router = t.router
 export const procedure = t.procedure
 export const appRouter = router({
-	boiler: lazy(() => import('../boiler/trpc')),
-	system: lazy(() => import('../system/trpc')),
+  boiler: lazy(() => import('../boiler/trpc')),
+  system: lazy(() => import('../system/trpc')),
 })
 export type AppRouter = typeof appRouter
 
 export const appMcpRouter = router({
-	boiler: lazy(() => import('../boiler/mcp')),
+  boiler: lazy(() => import('../boiler/mcp')),
 })
