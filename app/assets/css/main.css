@@ -1,2 +1,15 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+@theme {
+  --font-sans: "Roboto", sans-serif;
+}
+
+html, body, #__nuxt {
+	-webkit-user-select: none;
+	user-select: none;
+}
+img {
+	-webkit-user-drag: none;
+	user-drag: none;
+}
