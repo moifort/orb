@@ -1,15 +1,17 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+/* biome-ignore lint/suspicious/noUnknownAtRules: fixed next minor release of Biome */
 @theme {
   --font-sans: "Roboto", sans-serif;
 }
 
-html, body, #__nuxt {
-	-webkit-user-select: none;
-	user-select: none;
+html,
+body,
+#__nuxt {
+  -webkit-user-select: none;
+  user-select: none;
 }
 img {
-	-webkit-user-drag: none;
-	user-drag: none;
+  -webkit-user-drag: none;
 }
