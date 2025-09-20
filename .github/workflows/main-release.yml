@@ -1,0 +1,55 @@
+name: Release Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-package:
+    name: 🚀 Build & Package
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      NUXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: bun install
+      - name: Build Nuxt app
+        run: bun run build
+      - name: Resolve version from timestamp
+        id: version
+        shell: bash
+        run: |
+          set -eo pipefail
+          VERSION=$(git show -s --format=%cd --date=format:'%y.%m.%d.%H.%M' HEAD)
+          if [ -z "$VERSION" ]; then
+            VERSION=$(date -u '+%y.%m.%d.%H.%M')
+          fi
+          echo "Calculated version: $VERSION"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
+      - name: Package build artifacts
+        id: package
+        run: |
+          ARTIFACT="nuxt-${{ steps.version.outputs.version }}.tar.gz"
+          tar -czf "$ARTIFACT" .output
+          echo "artifact=$ARTIFACT" >> "$GITHUB_OUTPUT"
+      - name: Publish release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: Release ${{ steps.version.outputs.tag }}
+          target_commitish: ${{ github.sha }}
+          files: ${{ steps.package.outputs.artifact }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,36 +1,37 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-- `app/` Nuxt app: pages, assets, plugins (Vue 3 SFCs).
-- `server/` Nitro backend: tRPC routers, queries, routes, and plugins.
-- `shared/` Cross‑shared TypeScript types and validators (import via `#shared/...`).
-- `public/` Static assets served as‑is.
-- `nuxt.config.ts` project config; `.data/db` is Nitro fs storage (local only).
+- `app/` hosts the Nuxt 3 client: pages, components, assets, and Vue plugins.
+- `server/` contains Nitro backends: tRPC routers, REST routes, and server utilities.
+- `shared/` stores cross-cutting TypeScript types and validators imported via `#shared/...`.
+- `public/` serves static assets verbatim; avoid runtime logic here.
+- Local data persists under `.data/db`; treat it as disposable developer storage.
 
 ## Build, Test, and Development Commands
-- `bun install` install dependencies.
-- `bun dev` start Nuxt with HMR at `http://localhost:3000`.
-- `bun run build` production build to `.nuxt/`.
-- `bunx biome check --write .` format + lint fix (Biome).
-- `bunx vue-tsc --noEmit` type‑check Vue/TS without emitting files.
+- `bun install` installs workspace dependencies.
+- `bun dev` launches the Nuxt dev server with HMR at `http://localhost:3000`.
+- `bun run build` creates a production bundle in `.nuxt/`.
+- `bunx biome check --write .` formats and auto-fixes lint issues using Biome.
+- `bunx vue-tsc --noEmit` type-checks Vue and TypeScript sources without emitting files.
 
 ## Coding Style & Naming Conventions
-- Formatting: Biome enforced (tabs, single quotes, semicolons as needed).
-- Imports: let Biome organize; prefer path aliases `~`, `~~`, `#shared`.
-- Files: Vue SFCs `kebab-case.vue`; TS files `kebab-case.ts`.
-- Code: types/interfaces `PascalCase`; functions/vars `camelCase`; prefer named exports.
+- Formatting is Biome-driven: tabs, single quotes, and semicolons where required.
+- Prefer alias imports (`~`, `~~`, `#shared`) and let Biome organize headers.
+- Vue SFCs use `kebab-case.vue`; TypeScript modules use `kebab-case.ts`.
+- Types and interfaces follow `PascalCase`; functions and variables use `camelCase`.
 
 ## Testing Guidelines
-- No test runner is configured yet. Prefer Vitest + Nuxt Test Utils.
-- Convention: colocate `*.spec.ts` next to code or under `tests/` mirroring paths.
-- Aim for unit tests on `server/` and `shared/`; snapshot tests for simple Vue views.
+- No runner is configured yet; target Vitest + Nuxt Test Utils when adding coverage.
+- Place specs beside source files (`feature.spec.ts`) or mirror paths under `tests/`.
+- Align tests with server logic and shared validators; favor snapshot tests for simple views.
+- Run `bunx vue-tsc --noEmit` before PRs to catch typing regressions.
 
 ## Commit & Pull Request Guidelines
-- Commits follow Conventional Commits: `feat(scope): ...`, `docs: ...`, `chore(deps): ...`.
-- PRs: include a clear description, scope/impact, and linked issues. Add screenshots for UI changes.
-- CI‑friendliness: run `bunx biome check --write .` and `bunx vue-tsc --noEmit` before submitting.
+- Use Conventional Commits (e.g., `feat(trpc): add user router`, `docs: update readme`).
+- PRs should outline scope, impact, linked issues, and include UI screenshots when applicable.
+- Keep diffs focused, reference relevant commands run, and mention new environment steps.
 
-## Agent‑Specific Notes
-- Do not edit generated folders (`.nuxt/`, `.data/`) or commit them.
-- Keep diffs minimal and focused; update imports to use aliases.
-- For new APIs, add tRPC procedures in `server/boiler/*` or a new module and expose via `server/api` router; consume via `app/plugins/trpc`.
+## Agent-Specific Notes
+- Do not modify generated artifacts like `.nuxt/` or `.data/`.
+- Favor minimal, well-scoped patches and retain existing alias patterns.
+- Coordinate new APIs through `server/api` and consume them via `app/plugins/trpc`.
