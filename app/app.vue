@@ -1,7 +1,8 @@
+
 <template>
   <UApp>
-    <UContainer class="min-h-screen flex items-center justify-center">
+    <div style="height: 100vh; width: 100vw;">
       <NuxtPage />
-    </UContainer>
+    </div>
   </UApp>
 </template>
