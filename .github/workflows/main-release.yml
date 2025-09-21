@@ -39,10 +39,11 @@ jobs:
         id: git-cliff
         with:
           config: cliff.toml
-          args: -vv --latest --strip header
+          args: -vv --tag ${{ steps.version.outputs.tag }} --strip-header
         env:
           OUTPUT: CHANGES.md
           GITHUB_REPO: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish release
         uses: softprops/action-gh-release@v1
         with:
