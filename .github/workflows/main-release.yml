@@ -6,13 +6,11 @@ on:
       - main
 
 jobs:
-  build-and-package:
-    name: 🚀 Build & Package
+  build-and-release:
+    name: 🚀 Build & Release
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    env:
-      NUXT_TELEMETRY_DISABLED: '1'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -28,20 +26,23 @@ jobs:
         id: version
         shell: bash
         run: |
-          set -eo pipefail
-          VERSION=$(git show -s --format=%cd --date=format:'%Y.%m.%d-%Hh%M' HEAD)
-          if [ -z "$VERSION" ]; then
-            VERSION=$(date -u '+%Y.%m.%d-%Hh%M')
-          fi
-          echo "Calculated version: $VERSION"
-          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          VERSION=$(date -u '+%Y.%m.%d-%Hh%M')
           echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
       - name: Package build artifacts
         id: package
         run: |
-          ARTIFACT="nuxt-${{ steps.version.outputs.version }}.tar.gz"
+          ARTIFACT="artifact.tar.gz"
           tar -czf "$ARTIFACT" .output
           echo "artifact=$ARTIFACT" >> "$GITHUB_OUTPUT"
+      - name: Generate a changelog
+        uses: orhun/git-cliff-action@v4
+        id: git-cliff
+        with:
+          config: cliff.toml
+          args: -vv --latest --strip header
+        env:
+          OUTPUT: CHANGES.md
+          GITHUB_REPO: ${{ github.repository }}
       - name: Publish release
         uses: softprops/action-gh-release@v1
         with:
@@ -49,6 +50,7 @@ jobs:
           name: Release ${{ steps.version.outputs.tag }}
           target_commitish: ${{ github.sha }}
           files: ${{ steps.package.outputs.artifact }}
+          body: ${{ steps.git-cliff.outputs.content }}
           draft: false
           prerelease: false
         env:
