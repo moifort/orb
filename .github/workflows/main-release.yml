@@ -24,7 +24,7 @@ jobs:
         id: version
         shell: bash
         run: |
-          VERSION=$(date -u '+%Y.%m.%d-%Hh%M')
+          VERSION=$(date -u '+%Y.%m.%d')
           echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
       - name: Package build artifacts
         id: package
