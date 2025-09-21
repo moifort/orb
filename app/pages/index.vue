@@ -1,6 +1,4 @@
 <script setup lang="ts">
-definePageMeta({ colorMode: 'dark' })
-
 const { $trpc } = useNuxtApp()
 const {
   data: temp,

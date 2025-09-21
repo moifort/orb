@@ -7,7 +7,12 @@
     "dev": "nuxt dev",
     "postinstall": "nuxt prepare",
     "lint": "biome check --write .",
-    "typecheck": "vue-tsc --noEmit"
+    "typecheck": "vue-tsc --noEmit",
+    "deploy": "bun run build && bun deploy:compress && bun deploy:transfer && bun deploy:kill && bun deploy:start",
+    "deploy:compress": "tar --no-xattrs --no-mac-metadata -czf output.tar.gz .output",
+    "deploy:transfer": "sshpass -p 'orb' scp output.tar.gz root@192.168.1.199:~/output.tar.gz && sshpass -p 'orb' ssh root@192.168.1.199 'rm -rf ~/app && tar -xzf ~/output.tar.gz && mv .output app'",
+    "deploy:kill": "sshpass -p 'orb' ssh root@192.168.1.199 'pkill -x chromium & fuser -k 3000/tcp'",
+    "deploy:start": "sshpass -p 'orb' ssh -f -n root@192.168.1.199 '/var/lib/dietpi/dietpi-software/installed/chromium-autostart.sh >/dev/null 2>&1 < /dev/null &'"
   },
   "dependencies": {
     "@matter/main": "0.15.3",

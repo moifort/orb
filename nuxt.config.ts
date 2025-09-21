@@ -4,7 +4,8 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   typescript: { typeCheck: true },
   modules: ['@nuxt/image', '@nuxt/ui'],
-  devtools: { enabled: false },
+  sourcemap: false,
+  devtools: false,
   css: ['~/assets/css/main.css'],
   build: { transpile: ['trpc-nuxt'] },
   nitro: {

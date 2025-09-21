@@ -40,6 +40,11 @@ developer, you’ll feel right at home. I’m especially focused on a design wit
 - **Phase 8:** Offer a selection of profiles
 - **To infinity, and beyond!** see all ideas, vote, and suggest new ones on [Github Discussions](https://github.com/moifort/orb/discussions/categories/ideas)
 
+## Requirements
+- Node
+- Bun
+- sshpass
+
 ## Software Setup
 The entire software stack is built with Nuxt, both on the client and server side. We will used the Raspberry Pi to in chromium kiosk mode to run the app full screen.
 
@@ -126,6 +131,10 @@ dietpi-autostart # 11 : Chromium - Dedicated use without desktop
 ## Performance
 
 - 56 secondes build from computer.
+kill + restart:
+- 55 secondes
+- 49 secondes --process-per-site
+- 
 
 ## 🙇 Thanks
 - [@Gaggimate](https://github.com/jniebuhr/gaggimate) for the open source code and all the instruction to mod the Gaggia
