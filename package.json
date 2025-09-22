@@ -10,7 +10,7 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@matter/main": "0.15.3",
+    "@matter/main": "0.15.4",
     "@nuxt/image": "1.11.0",
     "@nuxt/ui": "3.3.4",
     "@trpc/client": "11.5.1",
@@ -27,6 +27,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.4",
-    "vue-tsc": "3.0.7"
+    "vue-tsc": "3.0.8"
   }
 }
