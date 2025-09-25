@@ -57,7 +57,7 @@ protect_breaking_commits = false
 commit_parsers = [
     { message = "^feat", group = "<!-- 0 -->🚀 Features" },
     { message = "^fix", group = "<!-- 1 -->🐛 Fixes" },
-    { message = "^perf", group = "<!-- 4 -->🔥Performance" },
+    { message = "^perf", group = "<!-- 4 -->🔥 Performance" },
     { message = "^style", group = "<!-- 5 -->🎨 Styling" },
     { message = "^chore\\(release\\): prepare for", skip = true },
     { message = "^chore\\(deps.*\\)", skip = true },

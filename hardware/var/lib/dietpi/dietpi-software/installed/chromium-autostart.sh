@@ -27,7 +27,7 @@ FP_CHROMIUM=$(command -v chromium-browser)
 STARTX='xinit'
 [ "$USER" = 'root' ] || STARTX='startx'
 
-node /root/build/.output/server/index.mjs &
+node /root/app/server/index.mjs &
 sleep 3
 
 exec "$STARTX" "$FP_CHROMIUM" $CHROMIUM_OPTS "${URL:-https://dietpi.com/}" -- -nocursor

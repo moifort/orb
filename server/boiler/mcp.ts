@@ -16,5 +16,5 @@ Retrieve the current temperature of the espresso machine boiler.
 - Output:integer between 0 and 500`,
       },
     })
-    .query((data) => getCurrentTemperature(data.ctx.storage)()),
+    .query(() => getCurrentTemperature()),
 })
