@@ -34,6 +34,6 @@ export const getBoilerTemperature = async () => {
   const { stdout, stderr } = await execAsync(
     `printf '\\x00\\x00\\x00\\x00' | spi-pipe -d /dev/spidev0.0 -s 500000 -b 4 -n 1 | hexdump -v -e '4/1 "%02x" "\\n"'`,
   )
-  if (stderr) return Result.error({ type: 'BoilerSensorCommandError', message: stderr })
+  if (stderr) return Result.error('boiler-sensor-command-error' as const)
   return decodeMAX31855(stdout.trim()).map(({ boilerTemperature }) => boilerTemperature)
 }
