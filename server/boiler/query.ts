@@ -1,7 +1,6 @@
-import type { Storage } from 'unstorage'
-import type { TemperatureC } from '#shared/boiler/type'
+import { getBoilerTemperature } from '~~/server/boiler/infra/sensor'
 
-export const getCurrentTemperature = (storage: Storage) => async () => {
-  storage.set<TemperatureC>('boiler:currentTemperatureC', 98 as TemperatureC)
-  return storage.get<TemperatureC>('boiler:currentTemperatureC')
+export const getCurrentTemperature = async () => {
+  const result = await getBoilerTemperature()
+  return result.getOrDefault('not-available' as const)
 }
