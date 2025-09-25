@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   ssr: false,
   compatibilityDate: '2025-07-15',
   typescript: { typeCheck: true },
-  modules: ['@nuxt/image', '@nuxt/ui', '@nuxt/test-utils/module'],
+  modules: ['@nuxt/image', '@nuxt/ui'],
   sourcemap: false,
   devtools: false,
   css: ['~/assets/css/main.css'],

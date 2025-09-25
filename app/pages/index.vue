@@ -2,7 +2,8 @@
 const { $trpc } = useNuxtApp()
 const { data: temperature, refresh } = await $trpc.boiler.getCurrentTemperature.useQuery()
 
-setInterval(refresh, 1000)
+const liveTemperature = setInterval(refresh, 1000)
+onUnmounted(() => clearInterval(liveTemperature))
 </script>
 
 <template>
