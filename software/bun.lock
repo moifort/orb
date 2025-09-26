@@ -24,9 +24,6 @@
         "@types/bun": "latest",
         "vue-tsc": "3.0.8",
       },
-      "peerDependencies": {
-        "typescript": "^5",
-      },
     },
   },
   "packages": {

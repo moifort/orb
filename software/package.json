@@ -35,9 +35,6 @@
     "vue-tsc": "3.0.8",
     "@types/bun": "latest"
   },
-  "peerDependencies": {
-    "typescript": "^5"
-  },
   "imports": {
     "#shared/*": "./shared/*.ts"
   }
