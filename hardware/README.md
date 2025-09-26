@@ -1,4 +1,5 @@
 # Hardware
+We installed a minimal OS on the Raspberry Pi Zero 2W: DietPi, and set it up to boot directly into Chromium Kiosk mode.
 
 ## 🛒 Shopping list
 > 💡 For a better price, buy everything on Aliexpress (1-2 weeks delivery), I use Amazon for faster delivery (1-day delivery).
@@ -42,39 +43,26 @@
 - **Pressure Sensor** - [1.6MPa, 5V Supply, 0.5 - 4.5V Output](https://fr.aliexpress.com/item/1005005510454084.html?spm=a2g0o.order_list.order_list_main.53.13b61802as73dy&gatewayAdapt=glo2fra) - **9,69€**
 - **Pressure Sensor** - [Digital Converter Module 16 Bit I2C 2.0V To 5.5V ](https://fr.aliexpress.com/item/1005007628692389.html?spm=a2g0o.order_list.order_list_main.23.13b61802as73dy&gatewayAdapt=glo2fra) - **1,62€**
 
-## Hardware
-We installed a minimal OS on the Raspberry Pi Zero 2W, and set it up to boot directly into Chromium Kiosk mode.
-Setup with DietPi Zero 2W
+## 💿 OS 
 
-### requirements
+### Requirements
+- [DietPi image](https://dietpi.com/downloads/images/DietPi_RPi234-ARMv8-Trixie.img.xz)
+- [balenaEtcher](https://www.balena.io/etcher/)
+
+
+### Setup 
 ```
 apt-get install -y build-essential python3 spi-tools bsdextrautils
 ```
 
-### Sources:
-- [Raspberry Pi Zero 2W pine shema](https://pinout.xyz/pinout/pin21_gpio9/)
+### Shematics
+![raspberry-pi-pineout.png](.static/raspberry-pi-pineout.png)
 
-### Install DietPi
-1. Download the [DietPi image](https://dietpi.com/downloads/images/DietPi_RPi234-ARMv8-Trixie.img.xz)
-2. Flash it to your microSD card using [balenaEtcher](https://www.balena.io/etcher/)
-3. Setup Wifi for the first connect on the freshly installed SD card
-```text
-# dietpi.txt
+[Raspberry Pi Zero 2W pine shema](https://pinout.xyz/pinout/pin21_gpio9/)
 
 
 
-```
 
-## 5" waveshare Screen setup
-All information [wiki](https://www.waveshare.com/wiki/5inch_1080x1080_LCD)
-
-```text
-# /boot/config.txt
-hdmi_group=2
-hdmi_mode=87
-hdmi_pixel_freq_limit=356000000
-hdmi_timings=1080 0 68 32 100 1080 0 12 4 16 0 0 0 60 0 85500000 0
-```
 
 ### Setup Chromium Kiosk mode
 - Wiki: [Kiosk Mode](https://dietpi.com/docs/software/desktop/#chromium)
@@ -84,17 +72,3 @@ dietpi-software install 113 # Install Chromium
 dietpi-autostart # 11 : Chromium - Dedicated use without desktop
 ```
 - add '--no-memcheck'
-
-
-## Performance
-
-- 56 secondes build from computer.
-kill + restart:
-- 55 secondes
-- 49 secondes --process-per-site
-- 
-
-## 🙇 Thanks
-- [@Gaggimate](https://github.com/jniebuhr/gaggimate) for the open source code and all the instruction to mod the Gaggia
-- [@gaggiuino](https://github.com/Zer0-bit/gaggiuino) for the old open source and all the community
-- [@Lance Hedrick](https://www.youtube.com/@LanceHedrick) for discovering the Gaggimate and the Gaggia modding

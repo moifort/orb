@@ -1,5 +1,5 @@
 # 🇫🇷 Orb - _Made In France Gaggia mod_ 🇫🇷
-![image](orb.jpg)
+![image](.static/orb.jpg)
 > Design-first, fully connected, all-TypeScript Gaggia mod. Bigger round screen, web dev-friendly stack ❤️.
 ---
 
@@ -9,7 +9,7 @@ developer, you’ll feel right at home. I’m especially focused on a design wit
 
 ## 🗺️ Roadmap
 > 💡 If you want to vote or suggest new idea go to [Github Discussions](https://github.com/moifort/orb/discussions/categories/ideas)
-> 
+ 
 - ⏳ **Phase 1:** Proof of Concept — ability to control at least one sensor, one relay, and a touchscreen
     - ✅ Initialize NuxtJs project
     - ✅ Buy components
@@ -28,12 +28,8 @@ developer, you’ll feel right at home. I’m especially focused on a design wit
 - **To infinity, and beyond!** see all ideas, vote, and suggest new ones on [Github Discussions](https://github.com/moifort/orb/discussions/categories/ideas)
 
 ## Performance
-
-- 56 secondes build from computer.
-kill + restart:
-- 55 secondes
-- 49 secondes --process-per-site
-- 
+- kill + restart - 55 secondes
+- kill + restart - 49 secondes --process-per-site
 
 ## 🙇 Thanks
 - [@Gaggimate](https://github.com/jniebuhr/gaggimate) for the open source code and all the instruction to mod the Gaggia
