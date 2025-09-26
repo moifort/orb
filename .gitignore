@@ -17,8 +17,3 @@ logs
 .env
 .env.*
 !.env.example
-
-software/node_modules
-software/output.tar.gz
-software/.nuxt
-software/.output
