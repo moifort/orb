@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@nuxt/image": "1.11.0",
-    "@nuxt/ui": "3.3.4",
+    "@nuxt/ui": "4.0.0",
     "@trpc/client": "11.6.0",
     "@trpc/server": "11.6.0",
     "nuxt": "4.1.2",
