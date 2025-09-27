@@ -8,11 +8,12 @@
     "postinstall": "nuxt prepare",
     "lint": "biome check --write .",
     "typecheck": "vue-tsc --noEmit",
-    "deploy": "bun run build && bun deploy:compress && bun deploy:transfer && bun deploy:kill && bun deploy:start",
+    "deploy": "bun run build && bun deploy:compress && bun deploy:transfer && bun deploy:kill && bun deploy:start && bun deploy:clean",
     "deploy:compress": "tar --no-xattrs --no-mac-metadata -czf output.tar.gz .output",
     "deploy:transfer": "sshpass -p 'orb' scp output.tar.gz root@192.168.1.199:~/output.tar.gz && sshpass -p 'orb' ssh root@192.168.1.199 'rm -rf ~/app && tar -xzf ~/output.tar.gz && mv .output app'",
     "deploy:kill": "sshpass -p 'orb' ssh root@192.168.1.199 'pkill -x chromium &&  fuser -k 3000/tcp && sleep 3'",
-    "deploy:start": "sshpass -p 'orb' ssh -f -n root@192.168.1.199 '/var/lib/dietpi/dietpi-software/installed/chromium-autostart.sh'"
+    "deploy:start": "sshpass -p 'orb' ssh -f -n root@192.168.1.199 '/var/lib/dietpi/dietpi-software/installed/chromium-autostart.sh'",
+    "deploy:clean": "rm output.tar.gz && rm -rf .output"
   },
   "dependencies": {
     "@nuxt/image": "1.11.0",
@@ -34,9 +35,6 @@
     "@biomejs/biome": "2.2.4",
     "vue-tsc": "3.0.8",
     "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
   },
   "imports": {
     "#shared/*": "./shared/*.ts"
