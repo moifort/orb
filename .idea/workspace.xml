@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b5577a42-d008-4566-a19b-41d3e05e16de" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/software/server/domains/heater/command.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/software/server/domains/heater/query.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/software/server/domains/heater/trpc.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/software/server/plugins/log.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/software/server/tasks/heater.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/software/server/utils/event-bus.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/software/server/utils/event-bus.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/software/server/utils/storage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/software/server/utils/storage.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/software/server/utils/system.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/software/server/utils/system.type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software/.data/db/boiler/currentTemperatureC" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/software/app/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/software/app/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software/biome.json" beforeDir="false" afterPath="$PROJECT_DIR$/software/biome.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software/bun.lock" beforeDir="false" afterPath="$PROJECT_DIR$/software/bun.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software/nuxt.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/software/nuxt.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/software/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software/server/api/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/software/server/api/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software/server/boiler/infra/sensor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/software/server/domains/heater/infra/sensor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software/server/boiler/infra/sensor.unit.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/software/server/domains/heater/infra/sensor.unit.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software/server/boiler/mcp.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/software/server/boiler/query.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/software/server/boiler/trpc.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/software/server/system/command.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/software/server/system/trpc.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/software/shared/boiler/type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/software/shared/heater/type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software/shared/boiler/validator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/software/shared/heater/validator.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;moifort&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/moifort/orb.git&quot;,
+    &quot;accountId&quot;: &quot;10864136-8e64-4730-9ad3-06588ea3e930&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="33JyUG6v4EiTiiKKxnqCsD8EQER" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "dependabot/bun/nuxt/ui-4.0.0",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/thibaut/Code/orb/software/server/utils",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "bun",
+    "settings.editor.selected.configurable": "Settings.Biome",
+    "ts.external.directory.path": "/Users/thibaut/Code/orb/software/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/software/server/utils" />
+      <recent name="$PROJECT_DIR$/software/server/boiler" />
+      <recent name="$PROJECT_DIR$/software/server/system" />
+    </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/software/server/api/[trpc].ts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/software/server/domains" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
+        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-IU-252.26199.169" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b5577a42-d008-4566-a19b-41d3e05e16de" name="Changes" comment="" />
+      <created>1759049484678</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1759049484678</updated>
+      <workItem from="1759049486284" duration="128000" />
+      <workItem from="1759049627546" duration="26509000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="8eb7041b-5a27-4868-8268-7c7dc35d8b75" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="8eb7041b-5a27-4868-8268-7c7dc35d8b75">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/Users/thibaut/Code/orb/software/server/utils" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
