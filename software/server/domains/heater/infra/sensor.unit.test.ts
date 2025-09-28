@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test'
-import { TemperatureC } from '#shared/boiler/validator'
+import { TemperatureC } from '#shared/heater/validator'
 import { decodeMAX31855 } from './sensor'
 
 describe('decodeMAX31855', () => {

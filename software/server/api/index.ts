@@ -1,19 +1,13 @@
 import { initTRPC, lazy } from '@trpc/server'
-import type { McpMeta } from 'trpc-to-mcp/types'
+import { useTypedStorage } from '~~/server/utils/storage'
 
-export const context = () => ({ storage: useStorage('database') })
+export type AppRouter = typeof appRouter
 export type Context = Awaited<ReturnType<typeof context>>
 
-const t = initTRPC.meta<McpMeta>().context<Context>().create()
-
-export const router = t.router
-export const procedure = t.procedure
-export const appRouter = router({
-  boiler: lazy(() => import('../boiler/trpc')),
-  system: lazy(() => import('../system/trpc')),
-})
-export type AppRouter = typeof appRouter
-
-export const appMcpRouter = router({
-  boiler: lazy(() => import('../boiler/mcp')),
+export const context = () => ({ storage: useTypedStorage() })
+const trpc = initTRPC.context<Context>().create()
+export const router = trpc.router
+export const procedure = trpc.procedure
+export const appRouter = trpc.router({
+  boiler: lazy(() => import('~~/server/domains/heater/trpc')),
 })

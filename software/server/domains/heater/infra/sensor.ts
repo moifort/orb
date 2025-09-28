@@ -1,9 +1,5 @@
-import { exec } from 'node:child_process'
-import { promisify } from 'node:util'
 import { Result } from 'typescript-result'
-import { TemperatureC } from '#shared/boiler/validator'
-
-const execAsync = promisify(exec)
+import { TemperatureC } from '#shared/heater/validator'
 
 export const decodeMAX31855 = (rawHex: string) => {
   if (!/^[0-9a-fA-F]{8}$/.test(rawHex)) {
@@ -30,10 +26,12 @@ export const decodeMAX31855 = (rawHex: string) => {
   return Result.ok({ boilerTemperature, max31855Temperature })
 }
 
-export const getBoilerTemperature = async () => {
-  const { stdout, stderr } = await execAsync(
+export const getTemperature = (command: SystemCommand) => async () => {
+  const result = await command(
     `printf '\\x00\\x00\\x00\\x00' | spi-pipe -d /dev/spidev0.0 -s 500000 -b 4 -n 1 | hexdump -v -e '4/1 "%02x" "\\n"'`,
   )
-  if (stderr) return Result.error('boiler-sensor-command-error' as const)
-  return decodeMAX31855(stdout.trim()).map(({ boilerTemperature }) => boilerTemperature)
+  if (!result.ok) return Result.error('boiler-sensor-command-error' as const)
+  return result
+    .map((value) => decodeMAX31855(value))
+    .map(({ boilerTemperature }) => boilerTemperature)
 }
