@@ -4,7 +4,6 @@ import { useTypedStorage } from '~~/server/utils/storage'
 import { useSystemCommand } from '~~/server/utils/system'
 
 export default defineTask({
-  meta: { name: 'heater' },
   async run() {
     const result = await getTemperature(useSystemCommand())()
     await HeaterCommand.saveTemperature(

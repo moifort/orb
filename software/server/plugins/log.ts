@@ -1,4 +1,4 @@
 export default defineNitroPlugin(({ hooks }) => {
-  useEventBus().on('*', (name, payload) => console.log(name, payload))
-  hooks.hookOnce('close', () => useEventBus().all.clear())
+  runTask('test').then()
+  //  hooks.hookOnce('close', () => useEventBus().all.clear())
 })

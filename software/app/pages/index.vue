@@ -5,7 +5,7 @@ import type { DataRecord } from '#shared/heater/type'
 
 const { $trpc } = useNuxtApp()
 const { data: temperatures, refresh: refreshAll } = await $trpc.boiler.getAllTemperatures.useQuery()
-useIntervalFn(refreshAll, 1000)
+useIntervalFn(refreshAll, 5000)
 const temperature = computed(() => temperatures.value?.at(-1) ?? null)
 </script>
 
@@ -20,7 +20,7 @@ const temperature = computed(() => temperatures.value?.at(-1) ?? null)
         :ui="{ leadingIcon: 'size-15', title: 'text-3xl' }"
     >
       <template #footer>
-        <VisXYContainer :data="temperatures?.map((t, i) => ({y: t,x: i})) ?? []" width="100%" height="100px" :yDomain="[30,110]">
+        <VisXYContainer :data="temperatures?.map((t, i) => ({y: t,x: i})) ?? []" width="100%" height="100px" :yDomain="[10,110]">
           <VisLine color="gray"
                    curveType="basis"
                    :x="({ x }: DataRecord) => x"
