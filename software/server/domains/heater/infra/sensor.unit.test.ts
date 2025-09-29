@@ -2,7 +2,6 @@ import { describe, expect, test } from 'bun:test'
 import { TemperatureC } from '#shared/heater/validator'
 import { decodeMAX31855 } from './sensor'
 
-// TODO add github test action
 describe('decodeMAX31855', () => {
   test('decodes no-fault sample (boiler=100.00°C, max31855=25.00°C)', () => {
     const { value } = decodeMAX31855('06401900')
