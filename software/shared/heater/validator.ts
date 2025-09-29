@@ -1,5 +1,5 @@
 import { make } from 'ts-brand'
-import type { TemperatureC as TemperatureCType } from '#shared/boiler/type'
+import type { TemperatureC as TemperatureCType } from '#shared/heater/type'
 
 export const TemperatureC = make<TemperatureCType>((value) => {
   if (value < 0) throw new Error(`Temperature must be greater to 0°C, actual: ${value}°C`)

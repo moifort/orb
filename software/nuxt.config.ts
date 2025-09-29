@@ -3,17 +3,16 @@ export default defineNuxtConfig({
   ssr: false,
   compatibilityDate: '2025-07-15',
   typescript: { typeCheck: true },
-  modules: ['@nuxt/image', '@nuxt/ui'],
+  modules: ['@nuxt/ui'],
   sourcemap: false,
   devtools: false,
   css: ['~/assets/css/main.css'],
   build: { transpile: ['trpc-nuxt'] },
   nitro: {
-    storage: {
-      database: {
-        driver: 'fs',
-        base: './.data/db',
-      },
+    experimental: { tasks: true },
+    scheduledTasks: {
+      '*/1 * * * * *': ['heater'],
     },
+    storage: { database: { driver: 'fs', base: './.data/db' } },
   },
 })
