@@ -6,6 +6,7 @@ import type { DataRecord } from '#shared/heater/type'
 const { $trpc } = useNuxtApp()
 const { data: temperatures, refresh: refreshAll } = await $trpc.boiler.getAllTemperatures.useQuery()
 useIntervalFn(refreshAll, 5000)
+// TODO: add last de lodash
 const temperature = computed(() => temperatures.value?.at(-1) ?? null)
 </script>
 
