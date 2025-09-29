@@ -5,6 +5,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "clean": "rm -rf .nuxt node_modules/.cache",
     "postinstall": "nuxt prepare",
     "lint": "biome check --write .",
     "typecheck": "vue-tsc --noEmit",
@@ -13,7 +14,7 @@
     "deploy:transfer": "sshpass -p 'orb' scp output.tar.gz root@192.168.1.199:~/output.tar.gz && sshpass -p 'orb' ssh root@192.168.1.199 'rm -rf ~/app && tar -xzf ~/output.tar.gz && mv .output app'",
     "deploy:kill": "sshpass -p 'orb' ssh root@192.168.1.199 'pkill -x chromium &&  fuser -k 3000/tcp && sleep 3'",
     "deploy:start": "sshpass -p 'orb' ssh -f -n root@192.168.1.199 '/var/lib/dietpi/dietpi-software/installed/chromium-autostart.sh'",
-    "deploy:clean": "rm output.tar.gz && rm -rf .output"
+    "deploy:clean": "rm output.tar.gz .output"
   },
   "dependencies": {
     "@nuxt/ui": "4.0.0",

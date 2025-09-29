@@ -1,5 +1,4 @@
 import type { CurrentTemperatureC } from '#shared/heater/type'
-import type { TypedStorage } from '~~/server/utils/storage.type'
 
 export namespace HeaterCommand {
   export type Store = { 'heater:temperatures': CurrentTemperatureC[] }
