@@ -9,6 +9,7 @@
     "postinstall": "nuxt prepare",
     "lint": "biome check --write .",
     "typecheck": "vue-tsc --noEmit",
+    "test:unit": "bun test unit",
     "deploy": "bun run build && bun deploy:compress && bun deploy:transfer && bun deploy:kill && bun deploy:start && bun deploy:clean",
     "deploy:compress": "tar --no-xattrs --no-mac-metadata -czf output.tar.gz .output",
     "deploy:transfer": "sshpass -p 'orb' scp output.tar.gz root@192.168.1.199:~/output.tar.gz && sshpass -p 'orb' ssh root@192.168.1.199 'rm -rf ~/app && tar -xzf ~/output.tar.gz && mv .output app'",

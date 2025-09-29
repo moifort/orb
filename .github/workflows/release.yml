@@ -20,18 +20,6 @@ jobs:
           release-type: simple
 
 # TODO Add artifact to release
-#      - name: Set up Bun
-#        uses: oven-sh/setup-bun@v2
-#      - name: Install dependencies
-#        run: bun install
-#      - name: Build Nuxt app
-#        run: bun run build
-#      - name: Resolve version from timestamp
-#        id: version
-#        shell: bash
-#        run: |
-#          VERSION=$(date -u '+%Y.%m.%d-%Hh%M')
-#          echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
 #      - name: Package build artifacts
 #        id: package
 #        run: |
