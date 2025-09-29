@@ -16,7 +16,7 @@ const fakeSystemCommand = () => async (command: string) =>
 const execAsync = promisify(exec)
 
 const systemCommand = () => async (command: string) => {
-  if (isBlank(command.trim())) return Result.error('command-cannot-be-empty' as const)
+  if (isBlank(command)) return Result.error('command-cannot-be-empty' as const)
   const { stdout, stderr } = await execAsync(command)
   if (stderr) return Result.error(stderr)
   return Result.ok(stdout.trim())
