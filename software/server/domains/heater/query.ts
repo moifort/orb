@@ -1,10 +1,10 @@
-import type { TypedStorage } from '~~/server/utils/storage.type'
+import { last } from '#shared/utils'
+import type { TypedStorage } from '~~/server/utils/storage'
 
 export namespace HeaterQuery {
   export const currentTemperature = (storage: TypedStorage) => async () => {
     const temperatures = await storage.getItem('heater:temperatures')
-    // TODO add last lodash
-    return temperatures?.[temperatures.length - 1] ?? 'not-available'
+    return last(temperatures) ?? 'not-available'
   }
 
   export const allTemperatures = (storage: TypedStorage) => async () =>

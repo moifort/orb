@@ -1,7 +1,7 @@
 import { HeaterCommand } from '~~/server/domains/heater/command'
 import { getTemperature } from '~~/server/domains/heater/infra/sensor'
 import { useTypedStorage } from '~~/server/utils/storage'
-import { useSystemCommand } from '~~/server/utils/system'
+import { useSystemCommand } from '~~/server/utils/system-command'
 
 // Schedule every seconds
 export default defineTask({
