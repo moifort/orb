@@ -1,3 +1,7 @@
-import type { Store } from '~~/server/utils/storage.type'
+import type { Storage as Unstorage } from 'unstorage'
+import type { HeaterCommand } from '~~/server/domains/heater/command'
+
+export type Store = HeaterCommand.Store
+export type TypedStorage = Unstorage<Store>
 
 export const useTypedStorage = (): TypedStorage => useStorage<Store>('database')

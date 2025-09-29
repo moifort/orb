@@ -2,12 +2,13 @@
 import { VisLine, VisPlotband, VisXYContainer } from '@unovis/vue'
 import { useIntervalFn } from '@vueuse/core'
 import type { DataRecord } from '#shared/heater/type'
+import { last } from '#shared/utils'
 
 const { $trpc } = useNuxtApp()
 const { data: temperatures, refresh: refreshAll } = await $trpc.boiler.getAllTemperatures.useQuery()
+const temperature = computed(() => last(temperatures.value))
+
 useIntervalFn(refreshAll, 5000)
-// TODO: add last de lodash
-const temperature = computed(() => temperatures.value?.at(-1) ?? null)
 </script>
 
 <template>
