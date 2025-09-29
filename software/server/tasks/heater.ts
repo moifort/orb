@@ -3,6 +3,7 @@ import { getTemperature } from '~~/server/domains/heater/infra/sensor'
 import { useTypedStorage } from '~~/server/utils/storage'
 import { useSystemCommand } from '~~/server/utils/system'
 
+// Schedule every seconds
 export default defineTask({
   async run() {
     const result = await getTemperature(useSystemCommand())()
