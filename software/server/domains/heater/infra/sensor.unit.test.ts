@@ -2,11 +2,12 @@ import { describe, expect, test } from 'bun:test'
 import { TemperatureC } from '#shared/heater/validator'
 import { decodeMAX31855 } from './sensor'
 
+// TODO add github test action
 describe('decodeMAX31855', () => {
   test('decodes no-fault sample (boiler=100.00°C, max31855=25.00°C)', () => {
     const { value } = decodeMAX31855('06401900')
     expect(value).toEqual({
-      boilerTemperature: TemperatureC(100),
+      heaterTemperature: TemperatureC(100),
       max31855Temperature: TemperatureC(25),
     })
   })
@@ -23,7 +24,7 @@ describe('decodeMAX31855', () => {
 
   test('rounds max31855 to 2 decimals (0.1875 -> 0.19)', () => {
     const { value } = decodeMAX31855('00000030')
-    expect(value?.boilerTemperature).toBe(TemperatureC(0))
+    expect(value?.heaterTemperature).toBe(TemperatureC(0))
     expect(value?.max31855Temperature).toBe(TemperatureC(0.19))
   })
 

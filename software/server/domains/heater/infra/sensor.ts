@@ -22,8 +22,8 @@ export const decodeMAX31855 = (rawHex: string) => {
 
   let sensorData = (sensorValues >> 18) & 0x3fff
   if (sensorData & 0x2000) sensorData -= 0x4000
-  const boilerTemperature = TemperatureC(+(sensorData * 0.25).toFixed(2))
-  return Result.ok({ boilerTemperature, max31855Temperature })
+  const heaterTemperature = TemperatureC(+(sensorData * 0.25).toFixed(2))
+  return Result.ok({ heaterTemperature, max31855Temperature })
 }
 
 export const getTemperature = (command: SystemCommand) => async () => {
@@ -33,5 +33,5 @@ export const getTemperature = (command: SystemCommand) => async () => {
   if (!result.ok) return Result.error('boiler-sensor-command-error' as const)
   return result
     .map((value) => decodeMAX31855(value))
-    .map(({ boilerTemperature }) => boilerTemperature)
+    .map(({ heaterTemperature }) => heaterTemperature)
 }

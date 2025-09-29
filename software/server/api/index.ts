@@ -1,6 +1,6 @@
 import { initTRPC, lazy } from '@trpc/server'
-import { useTypedStorage } from '~~/server/utils/storage'
 
+// TODO le rajouter en utils
 export type AppRouter = typeof appRouter
 export type Context = Awaited<ReturnType<typeof context>>
 

@@ -3,6 +3,7 @@ import type { TypedStorage } from '~~/server/utils/storage.type'
 export namespace HeaterQuery {
   export const currentTemperature = (storage: TypedStorage) => async () => {
     const temperatures = await storage.getItem('heater:temperatures')
+    // TODO add last lodash
     return temperatures?.[temperatures.length - 1] ?? 'not-available'
   }
 
