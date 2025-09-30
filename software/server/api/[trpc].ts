@@ -1,8 +1,13 @@
+import { lazy } from '@trpc/server'
 import { createTRPCNuxtHandler } from 'trpc-nuxt/server'
-import { appRouter, context } from '~~/server/api/index'
+
+export type AppRouter = typeof appRouter
+const appRouter = useTrpc().router({
+  boiler: lazy(() => import('~~/server/domains/heater/trpc')),
+})
 
 export default createTRPCNuxtHandler({
   endpoint: '/api',
   router: appRouter,
-  createContext: context,
+  createContext: useTrpc().context,
 })
