@@ -3,6 +3,7 @@ import { promisify } from 'node:util'
 import { match } from 'ts-pattern'
 import { Result } from 'typescript-result'
 import { isBlank } from '#shared/utils'
+import { getFakeHeaterSensorData } from '~~/server/domains/heater/infra/sensor.data'
 
 export type SystemCommand = (command: string) => Promise<Result<string, string>>
 
@@ -10,7 +11,7 @@ const fakeSystemCommand = () => async (command: string) =>
   match(command)
     .with(
       `printf '\\x00\\x00\\x00\\x00' | spi-pipe -d /dev/spidev0.0 -s 500000 -b 4 -n 1 | hexdump -v -e '4/1 "%02x" "\\n"'`,
-      () => Result.ok('05C01900'), // TODO rajouter un fake qui simule la monté en puissance
+      () => Result.ok(getFakeHeaterSensorData()),
     )
     .otherwise(() => Result.error(`fake-output-for-command: ${command}`))
 const execAsync = promisify(exec)
