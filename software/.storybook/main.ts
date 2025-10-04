@@ -10,32 +10,7 @@ const config: StorybookConfig = {
   ],
   framework: {
     name: '@storybook-vue/nuxt',
-    options: { docgen: 'vue-component-meta' },
-  },
-  async viteFinal(config) {
-    const { mergeConfig } = await import('vite')
-
-    return mergeConfig(config, {
-      optimizeDeps: {
-        include: ['jsdoc-type-pratt-parser'],
-      },
-      resolve: {
-        alias: {
-          vue: 'vue/dist/vue.esm-bundler.js',
-        },
-      },
-      server: {
-        proxy: {
-          // Change Vite proxy configuration to enable Storybook server to serve fonts from Nuxt Dev server
-          '^/(_nuxt|_ipx|_icon|__nuxt_devtools__|_fonts)': {
-            target: 'https://localhost:5173',
-            changeOrigin: true,
-            secure: false,
-            ws: true,
-          },
-        },
-      },
-    })
+    options: {},
   },
 }
 export default config
