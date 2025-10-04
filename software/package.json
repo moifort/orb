@@ -15,7 +15,9 @@
     "deploy:transfer": "sshpass -p 'orb' scp output.tar.gz root@192.168.1.199:~/output.tar.gz && sshpass -p 'orb' ssh root@192.168.1.199 'rm -rf ~/app && tar -xzf ~/output.tar.gz && mv .output app'",
     "deploy:kill": "sshpass -p 'orb' ssh root@192.168.1.199 'pkill -x chromium &&  fuser -k 3000/tcp && sleep 3'",
     "deploy:start": "sshpass -p 'orb' ssh -f -n root@192.168.1.199 '/var/lib/dietpi/dietpi-software/installed/chromium-autostart.sh'",
-    "deploy:clean": "rm output.tar.gz .output"
+    "deploy:clean": "rm output.tar.gz .output",
+    "storybook": "storybook dev -p 6006 --no-open",
+    "storybook:build": "storybook build"
   },
   "dependencies": {
     "@nuxt/ui": "4.0.1",
@@ -36,8 +38,13 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.5",
-    "vue-tsc": "3.1.0",
-    "@types/bun": "latest"
+    "@chromatic-com/storybook": "4.1.1",
+    "@nuxtjs/storybook": "9.0.1",
+    "@storybook/addon-docs": "9.0.5",
+    "@storybook/addon-vitest": "9.0.5",
+    "@types/bun": "latest",
+    "storybook": "9.0.5",
+    "vue-tsc": "3.1.0"
   },
   "imports": {
     "#shared/*": "./shared/*.ts"
