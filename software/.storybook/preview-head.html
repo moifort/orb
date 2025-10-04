@@ -1,0 +1,14 @@
+<script>
+    window.global = window;
+    window.__VUE_HMR_RUNTIME__ = {
+        createRecord: () => {},
+        reload: () => {
+            console.log('Reloading the window due to HMR update...')
+            window.location.reload()
+        },
+        rerender: () => {
+            console.log('Rerendering due to HMR update...')
+            window.location.reload()
+        },
+    }
+</script>
