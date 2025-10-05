@@ -6,11 +6,19 @@
   --font-sans: "Roboto", sans-serif;
 }
 
+body {
+  zoom: 2;
+  height: 540px;
+  width: 540px;
+}
+
 html,
 body,
 #__nuxt {
   -webkit-user-select: none;
   user-select: none;
+  height: 100%;
+  width: 100%;
 }
 img {
   -webkit-user-drag: none;

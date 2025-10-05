@@ -13,9 +13,9 @@
     "deploy": "bun run build && bun deploy:compress && bun deploy:transfer && bun deploy:kill && bun deploy:start && bun deploy:clean",
     "deploy:compress": "tar --no-xattrs -czf output.tar.gz .output",
     "deploy:transfer": "sshpass -p 'orb' scp output.tar.gz root@192.168.1.199:~/output.tar.gz && sshpass -p 'orb' ssh root@192.168.1.199 'rm -rf ~/app && tar -xzf ~/output.tar.gz && mv .output app'",
-    "deploy:kill": "sshpass -p 'orb' ssh root@192.168.1.199 'pkill -x chromium &&  fuser -k 3000/tcp && sleep 3'",
+    "deploy:kill": "sshpass -p 'orb' ssh root@192.168.1.199 'fuser -k 3000/tcp && pkill -x chromium  && sleep 3'",
     "deploy:start": "sshpass -p 'orb' ssh -f -n root@192.168.1.199 '/var/lib/dietpi/dietpi-software/installed/chromium-autostart.sh'",
-    "deploy:clean": "rm output.tar.gz .output"
+    "deploy:clean": "rm -rf output.tar.gz .output"
   },
   "dependencies": {
     "@nuxt/ui": "4.0.1",
@@ -36,8 +36,13 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.5",
-    "vue-tsc": "3.1.0",
-    "@types/bun": "latest"
+    "@nuxtjs/storybook": "9.0.1",
+    "@storybook/addon-docs": "~9.0.5",
+    "@storybook/addon-vitest": "~9.0.5",
+    "@types/bun": "latest",
+    "jsdoc-type-pratt-parser": "6.3.3",
+    "storybook": "~9.0.5",
+    "vue-tsc": "3.1.0"
   },
   "imports": {
     "#shared/*": "./shared/*.ts"
