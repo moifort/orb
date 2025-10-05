@@ -10,9 +10,7 @@ export default defineNuxtConfig({
   devtools: false,
   css: ['~/assets/css/main.css'],
   build: { transpile: ['trpc-nuxt'] },
-  vite: {
-    plugins: [checker({ vueTsc: true })],
-  },
+  vite: { plugins: [checker({ vueTsc: true })] },
   nitro: {
     experimental: { tasks: true },
     scheduledTasks: {
