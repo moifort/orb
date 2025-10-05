@@ -1,4 +1,6 @@
 import type { Preview } from '@storybook-vue/nuxt'
+import './preview.css'
+import { parameters } from '@storybook/addon-docs/preview'
 
 const preview: Preview = {
   parameters: {
@@ -26,12 +28,21 @@ const preview: Preview = {
   },
   tags: ['autodocs'],
   decorators: [
-    (story) => ({
+    (story, context) => ({
       components: { story },
       setup: () => {
         document?.documentElement.classList.add('dark')
       },
-      template: `<div class="p-8 bg-[var(--ui-bg)] flex flex-col items-center"><story /></div>`,
+      template:
+        context.parameters.layout === 'fullscreen'
+          ? `
+          <div class="m-8" style="width: 520px; height: 520px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; background: var(--ui-bg); border: 1px solid var(--ui-border);">
+             <div class="flex flex-col justify-center p-8 h-full w-full">
+                <story />
+             </div>
+          </div>
+        `
+          : `<div class="p-8 bg-[var(--ui-bg)] flex flex-col items-center"><story /></div>`,
     }),
   ],
 }

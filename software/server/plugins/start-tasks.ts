@@ -1,3 +1,3 @@
 export default defineNitroPlugin(() => {
-  runTask('logs').then()
+  // runTask('logs').then()
 })

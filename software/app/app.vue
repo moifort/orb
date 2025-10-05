@@ -3,8 +3,8 @@
 
 <template>
   <UApp>
-    <div style="height: 100vh; width: 100vw;">
-      <NuxtPage />
-    </div>
+      <div class="dark flex flex-col justify-center p-8 h-full">
+        <NuxtPage />
+      </div>
   </UApp>
 </template>
