@@ -1,4 +1,3 @@
-import { setup } from '@storybook/vue3'
 import type { Preview } from '@storybook-vue/nuxt'
 
 const preview: Preview = {
@@ -29,7 +28,10 @@ const preview: Preview = {
   decorators: [
     (story) => ({
       components: { story },
-      template: `<div class="dark p-8 bg-[var(--ui-bg)] flex flex-col items-center"><story /></div>`,
+      setup: () => {
+        document?.documentElement.classList.add('dark')
+      },
+      template: `<div class="p-8 bg-[var(--ui-bg)] flex flex-col items-center"><story /></div>`,
     }),
   ],
 }

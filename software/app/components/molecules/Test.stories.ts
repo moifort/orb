@@ -7,5 +7,5 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  args: { temperature: 189 as CurrentTemperatureC },
+  args: { temperature: 170 as CurrentTemperatureC },
 }
