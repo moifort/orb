@@ -4,8 +4,5 @@ export default defineAppConfig({
       primary: 'black',
       neutral: 'neutral',
     },
-    colorMode: {
-      preference: 'dark',
-    },
   },
 })
