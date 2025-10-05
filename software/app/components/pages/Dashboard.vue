@@ -2,6 +2,6 @@
 </script>
 
 <template>
-  <div class="text-3xl"> test <UButton color="error" block size="xl">Click me dark</UButton></div>
+  <div class="text-3xl"> DARKKKKKK <UButton color="error" block size="xl">Click me dark</UButton></div>
   <div> test <UButton color="error" block >Click me</UButton></div>
 </template>

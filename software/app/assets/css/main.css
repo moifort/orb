@@ -6,6 +6,10 @@
   --font-sans: "Roboto", sans-serif;
 }
 
+:root {
+  color-scheme: dark;
+}
+
 body {
   zoom: 2;
   height: 540px;
