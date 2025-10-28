@@ -18,31 +18,31 @@
     "deploy:clean": "rm -rf output.tar.gz .output"
   },
   "dependencies": {
-    "@nuxt/ui": "4.0.1",
-    "@trpc/client": "11.6.0",
-    "@trpc/server": "11.6.0",
+    "@nuxt/ui": "4.1.0",
+    "@trpc/client": "11.7.1",
+    "@trpc/server": "11.7.1",
     "@unovis/ts": "1.6.1",
     "@unovis/vue": "1.6.1",
     "@vueuse/core": "13.9.0",
     "mitt": "3.0.1",
-    "nuxt": "4.1.2",
+    "nuxt": "4.2.0",
     "trpc-nuxt": "1.2.0",
     "ts-brand": "0.2.0",
-    "ts-pattern": "5.8.0",
+    "ts-pattern": "5.9.0",
     "typescript": "5.9.3",
     "typescript-result": "3.5.2",
     "vue": "3.5.22",
-    "vue-router": "4.5.1"
+    "vue-router": "4.6.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.5",
+    "@biomejs/biome": "2.3.2",
     "@nuxtjs/storybook": "9.0.1",
     "@storybook/addon-docs": "~9.0.5",
     "@storybook/addon-vitest": "~9.0.5",
     "@types/bun": "latest",
-    "jsdoc-type-pratt-parser": "6.3.3",
+    "jsdoc-type-pratt-parser": "6.11.0",
     "storybook": "~9.0.5",
-    "vue-tsc": "3.1.0"
+    "vue-tsc": "3.1.2"
   },
   "imports": {
     "#shared/*": "./shared/*.ts"
