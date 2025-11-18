@@ -55,6 +55,9 @@ We installed a minimal OS on the Raspberry Pi Zero 2W: DietPi, and set it up to 
 apt-get install -y build-essential python3 spi-tools bsdextrautils
 ```
 
+- Activate I2C: `dietpi-config > Advanced Options > I2C > On` (Temperature sensor)
+- Activate SPI: `dietpi-config > Advanced Options > SPI > On` (Time Of Light sensor)
+
 ### Shematics
 ![raspberry-pi-pineout.png](.static/raspberry-pi-pineout.png)
 
