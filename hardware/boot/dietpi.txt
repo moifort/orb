@@ -51,20 +51,20 @@ AUTO_SETUP_NET_HOSTNAME=Orb
 AUTO_SETUP_NET_ETH_FORCE_SPEED=0
 
 # Delay service starts at boot until network is established: 0=disabled | 1=enabled
-AUTO_SETUP_BOOT_WAIT_FOR_NETWORK=1
+AUTO_SETUP_BOOT_WAIT_FOR_NETWORK=0
 
 ##### Misc options #####
 # Swap space size to generate: 0 => disable | 1 => auto | 2 and up => size in MiB
 AUTO_SETUP_SWAPFILE_SIZE=1
 # Swap space location: "zram" => swap space on /dev/zram0 (auto-size = 50% of RAM size) | /path/to/file => swap file at location (auto-size = 2 GiB minus RAM size)
-AUTO_SETUP_SWAPFILE_LOCATION=/var/swap
+AUTO_SETUP_SWAPFILE_LOCATION=zram
 
 # Set to "1" to disable HDMI/video output and framebuffers on Raspberry Pi, to reduce power consumption and memory usage: Works on RPi only!
 AUTO_SETUP_HEADLESS=0
 
 # Serial console: Set to "0" if you do not require a serial console. It will then be disabled automatically on first boot.
 # - If you leave it at "1", and first login does not happen on a serial console, a dialogue offers to disable it instead.
-CONFIG_SERIAL_CONSOLE_ENABLE=1
+CONFIG_SERIAL_CONSOLE_ENABLE=0
 
 # Unmask (enable) systemd-logind service (including dbus), which is masked by default on DietPi
 AUTO_UNMASK_LOGIND=0
@@ -150,7 +150,7 @@ SURVEY_OPTED_IN=-1
 ##### DietPi-Config settings #####
 #------------------------------------------------------------------------------------------------------
 # CPU Governor: schedutil | ondemand | interactive | conservative | powersave | performance
-CONFIG_CPU_GOVERNOR=schedutil
+CONFIG_CPU_GOVERNOR=performance
 # Ondemand Sampling Rate | Min value: 10000 microseconds (10 ms)
 CONFIG_CPU_ONDEMAND_SAMPLE_RATE=25000
 # Ondemand Sampling Down Factor: Sampling Rate * Down Factor / 1000 = ms (40 = 1000 ms when sampling rate is 25000)
@@ -351,4 +351,3 @@ DEV_GITOWNER=MichaIng
 #------------------------------------------------------------------------------------------------------
 ##### Settings, automatically added by dietpi-update #####
 #------------------------------------------------------------------------------------------------------
-

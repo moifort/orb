@@ -68,7 +68,7 @@ gpu_mem_1024=64
 disable_splash=1
 
 #-------Onboard sound-----------
-dtparam=audio=on
+dtparam=audio=off
 
 #-------I2C-------------
 #dtparam=i2c_arm=on
